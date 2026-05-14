@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Exit Node Settings</title>
+		<meta charset="utf-8" />
+		<script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+	</head>
+	<body>
+		<sdpi-item label="Exit node">
+			<sdpi-select
+				setting="exitNodeHostname"
+				datasource="getExitNodes"
+				placeholder="Pick a peer"
+				loading="Loading peers…"
+				hot-reload
+			></sdpi-select>
+		</sdpi-item>
+		<sdpi-item>
+			<sdpi-button onclick="sdpiComponents.streamDeckClient.send('getExitNodes')">
+				Refresh
+			</sdpi-button>
+		</sdpi-item>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+{
+	"Name": "Tailscale",
+	"Version": "0.1.0.0",
+	"Author": "Martin Palastanga",
+	"Description": "Control Tailscale from your Stream Deck: toggle the connection, switch exit nodes, flip Shields Up, change accounts and see live status.",
+	"Category": "Tailscale",
+	"CategoryIcon": "imgs/category/icon",
+	"Icon": "imgs/plugin/marketplace",
+	"UUID": "com.github.streamdecktailscale",
+	"CodePath": "bin/plugin.js",
+	"SDKVersion": 2,
+	"Software": {
+		"MinimumVersion": "6.5"
+	},
+	"OS": [
+		{ "Platform": "mac", "MinimumVersion": "13" },
+		{ "Platform": "windows", "MinimumVersion": "10" }
+	],
+	"Nodejs": {
+		"Version": "20",
+		"Debug": "enabled"
+	},
+	"Actions": [
+		{
+			"Name": "Toggle Connection",
+			"UUID": "com.github.streamdecktailscale.toggle",
+			"Icon": "imgs/actions/toggle/icon",
+			"Tooltip": "Connect or disconnect from Tailscale.",
+			"Controllers": ["Keypad"],
+			"UserTitleEnabled": true,
+			"States": [
+				{ "Image": "imgs/actions/toggle/off", "TitleAlignment": "bottom", "Name": "Disconnected" },
+				{ "Image": "imgs/actions/toggle/on", "TitleAlignment": "bottom", "Name": "Connected" },
+				{ "Image": "imgs/actions/toggle/login", "TitleAlignment": "bottom", "Name": "Login required" }
+			]
+		},
+		{
+			"Name": "Exit Node",
+			"UUID": "com.github.streamdecktailscale.exitnode",
+			"Icon": "imgs/actions/exitnode/icon",
+			"Tooltip": "Route traffic through a Tailscale exit node.",
+			"PropertyInspectorPath": "ui/exitnode.html",
+			"Controllers": ["Keypad"],
+			"UserTitleEnabled": true,
+			"States": [
+				{ "Image": "imgs/actions/exitnode/off", "TitleAlignment": "bottom", "Name": "Inactive" },
+				{ "Image": "imgs/actions/exitnode/on", "TitleAlignment": "bottom", "Name": "Active" }
+			]
+		},
+		{
+			"Name": "Shields Up",
+			"UUID": "com.github.streamdecktailscale.shields",
+			"Icon": "imgs/actions/shields/icon",
+			"Tooltip": "Block all incoming connections.",
+			"Controllers": ["Keypad"],
+			"UserTitleEnabled": true,
+			"States": [
+				{ "Image": "imgs/actions/shields/off", "TitleAlignment": "bottom", "Name": "Off" },
+				{ "Image": "imgs/actions/shields/on", "TitleAlignment": "bottom", "Name": "On" }
+			]
+		},
+		{
+			"Name": "Switch Account",
+			"UUID": "com.github.streamdecktailscale.switch",
+			"Icon": "imgs/actions/switch/icon",
+			"Tooltip": "Switch to another Tailscale account.",
+			"PropertyInspectorPath": "ui/switch.html",
+			"Controllers": ["Keypad"],
+			"UserTitleEnabled": true,
+			"States": [
+				{ "Image": "imgs/actions/switch/off", "TitleAlignment": "bottom", "Name": "Inactive" },
+				{ "Image": "imgs/actions/switch/on", "TitleAlignment": "bottom", "Name": "Active" }
+			]
+		},
+		{
+			"Name": "Status",
+			"UUID": "com.github.streamdecktailscale.status",
+			"Icon": "imgs/actions/status/icon",
+			"Tooltip": "Live Tailscale status display.",
+			"Controllers": ["Keypad"],
+			"UserTitleEnabled": false,
+			"DisableAutomaticStates": true,
+			"States": [
+				{ "Image": "imgs/actions/status/disconnected", "TitleAlignment": "middle", "Name": "Status" }
+			]
+		}
+	]
+}

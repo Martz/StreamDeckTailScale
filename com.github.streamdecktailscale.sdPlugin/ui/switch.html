@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Switch Account Settings</title>
+		<meta charset="utf-8" />
+		<script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+	</head>
+	<body>
+		<sdpi-item label="Account">
+			<sdpi-select
+				setting="profileId"
+				datasource="getProfiles"
+				placeholder="Pick a Tailscale account"
+				loading="Loading profiles…"
+				hot-reload
+			></sdpi-select>
+		</sdpi-item>
+		<sdpi-item label="Label (optional)">
+			<sdpi-textfield setting="profileLabel" placeholder="Shown on the key"></sdpi-textfield>
+		</sdpi-item>
+	</body>
+</html>

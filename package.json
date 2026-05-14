@@ -1,0 +1,26 @@
+{
+	"name": "com.github.streamdecktailscale",
+	"version": "0.1.0",
+	"description": "Control Tailscale from your Stream Deck.",
+	"private": true,
+	"type": "module",
+	"engines": {
+		"node": ">=24"
+	},
+	"scripts": {
+		"build": "rolldown -c rolldown.config.ts",
+		"watch": "rolldown -c rolldown.config.ts -w",
+		"link": "streamdeck link com.github.streamdecktailscale.sdPlugin",
+		"validate": "streamdeck validate com.github.streamdecktailscale.sdPlugin",
+		"restart": "streamdeck restart com.github.streamdecktailscale"
+	},
+	"dependencies": {
+		"@elgato/streamdeck": "^2.1.0"
+	},
+	"devDependencies": {
+		"@tsconfig/node22": "^22.0.0",
+		"@types/node": "^22.0.0",
+		"rolldown": "^1.0.0-beta.49",
+		"typescript": "^5.6.0"
+	}
+}

@@ -1,0 +1,5 @@
+node_modules/
+com.github.streamdecktailscale.sdPlugin/bin/
+com.github.streamdecktailscale.sdPlugin/logs/
+*.log
+.DS_Store
